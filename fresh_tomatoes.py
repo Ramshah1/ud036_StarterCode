@@ -2,6 +2,8 @@ import webbrowser
 import os
 import re
 
+from entertainment_center import create_movie_objects
+
 
 # Styles and scripting for the page
 main_page_head = '''
@@ -165,3 +167,12 @@ def open_movies_page(movies):
     # open the output file in the browser (in a new tab, if possible)
     url = os.path.abspath(output_file.name)
     webbrowser.open('file://' + url, new=2)
+
+
+def main():
+    movies = create_movie_objects()
+    open_movies_page(movies)
+
+
+if __name__ == '__main__':
+    main()
